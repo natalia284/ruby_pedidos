@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: natalia
+  password: "1234"
+  host: 127.0.0.1
+  port: 5432
+
+development:
+  <<: *default
+  database: banco
+
+test:
+  <<: *default
+  database: banco
+
+production:
+  <<: *default
+  database: banco
+  username: <%= ENV['natalia'] %>
+  password: <%= ENV['1234'] %>
